@@ -1,0 +1,7 @@
+##grflangid 0x01
+
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :DogGRF adds dogs to your OpenTTD game
+
+STR_DOG_NAME       :Spot
+STR_NAME_DOG_CAR_1 :Dog Car

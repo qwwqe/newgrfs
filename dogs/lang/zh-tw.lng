@@ -1,0 +1,7 @@
+##grflangid 0x0C
+
+STR_GRF_NAME        :{TITLE} {VERSION}
+STR_GRF_DESCRIPTION :狗狗 GRF 將狗類物件導入您的 OpenTTD 遊戲中
+
+STR_DOG_NAME       :斑點
+STR_NAME_DOG_CAR_1 :狗車

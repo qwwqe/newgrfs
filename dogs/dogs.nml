@@ -1,0 +1,35 @@
+grf {
+  grfid: "QW\01\01";
+  name: string(STR_GRF_NAME);
+  desc: string(STR_GRF_DESCRIPTION);
+  version: 0;
+  min_compatible_version: 0;
+}
+
+item(FEAT_ROADVEHS, item_dog_car_1) {
+  name: string(STR_NAME_DOG_CAR_1);
+  climates_available: ALL_CLIMATES & ~bitmask(CLIMATE_TOYLAND); // No dogs in toyland
+  introduction_date: date(1920, 01, 01);
+  model_life: VEHICLE_NEVER_EXPIRES;
+  vehicle_life: 15;
+  reliability_decay: 20;
+  refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
+  non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_REFRIGERATED);
+  loading_speed: 5;
+  cost_factor: 108;
+  running_cost_factor: 90;
+
+  sprite_id: SPRITE_ID_NEW_ROADVEH;
+  speed: 60 km/h;
+  misc_flags: bitmask(ROADVEH_FLAG_2CC);
+  refit_cost: 0;
+  running_cost_base: RUNNING_COST_ROADVEH;
+  power: 97.9 hp;
+  weight: 1.329 ton;
+  cargo_capacity: 16;
+  sound_effect: sound("./sfx/barks.wav")
+}
+
+graphics {
+  default: spritegroup_dog_car_1_goods;
+}
