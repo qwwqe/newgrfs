@@ -6,30 +6,50 @@ grf {
   min_compatible_version: 0;
 }
 
+spriteset(spriteset_dog_car_1_goods, "gfx/bus.png") {
+  // left_x, upper_y, width, height, offset_x, offset_y
+  [0, 0, 8, 26, -4, -13]
+  [9, 0, 22, 21, -11, -10]
+  [32, 0, 32, 13, -16, -6]
+  [65, 0, 22, 21, -11, -10]
+  [88, 0, 8, 26, -4, -13]
+  [97, 0, 22, 21, -11, -10]
+  [120, 0, 32, 13, -16, -6]
+  [153, 0, 22, 21, -11, -10]
+}
+
+spritegroup spritegroup_dog_car_1_goods {
+  loaded: spriteset_dog_car_1_goods;
+  loading: spriteset_dog_car_1_goods;
+}
+
 item(FEAT_ROADVEHS, item_dog_car_1) {
-  name: string(STR_NAME_DOG_CAR_1);
-  climates_available: ALL_CLIMATES & ~bitmask(CLIMATE_TOYLAND); // No dogs in toyland
-  introduction_date: date(1920, 01, 01);
-  model_life: VEHICLE_NEVER_EXPIRES;
-  vehicle_life: 15;
-  reliability_decay: 20;
-  refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
-  non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_REFRIGERATED);
-  loading_speed: 5;
-  cost_factor: 108;
-  running_cost_factor: 90;
+  property {
+    name: string(STR_NAME_DOG_CAR_1);
+    climates_available: ALL_CLIMATES & ~bitmask(CLIMATE_TOYLAND); // No dogs in toyland
+    introduction_date: date(1920, 01, 01);
+    model_life: VEHICLE_NEVER_EXPIRES;
+    vehicle_life: 15;
+    reliability_decay: 20;
+    refittable_cargo_classes: bitmask(CC_PIECE_GOODS, CC_EXPRESS);
+    non_refittable_cargo_classes: bitmask(CC_PASSENGERS, CC_REFRIGERATED);
+    loading_speed: 5;
+    cost_factor: 108;
+    running_cost_factor: 90;
 
-  sprite_id: SPRITE_ID_NEW_ROADVEH;
-  speed: 60 km/h;
-  misc_flags: bitmask(ROADVEH_FLAG_2CC);
-  refit_cost: 0;
-  running_cost_base: RUNNING_COST_ROADVEH;
-  power: 97.9 hp;
-  weight: 1.329 ton;
-  cargo_capacity: 16;
-  sound_effect: sound("./sfx/barks.wav")
+    sprite_id: SPRITE_ID_NEW_ROADVEH;
+    speed: 60 km/h;
+    misc_flags: bitmask(ROADVEH_FLAG_2CC);
+    refit_cost: 0;
+    running_cost_base: RUNNING_COST_ROADVEH;
+    power: 97.9 hp;
+    weight: 1.329 ton;
+    cargo_capacity: 16;
+    sound_effect: sound("./sfx/barks.wav");
+  }
+
+  graphics {
+    default: spritegroup_dog_car_1_goods;
+  }
 }
 
-graphics {
-  default: spritegroup_dog_car_1_goods;
-}
